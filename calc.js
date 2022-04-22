@@ -4,18 +4,15 @@ var result = document.querySelector("div.container div.table")
 const calculator = document.querySelector("div.container button")
 
 calculator.addEventListener("click", () => {
-    if (Number(value.value) < 1 || Number(value.value) > 12 ) { 
-        result.innerHTML = "Este valor não é válido."
-    } else {
+    if (Number(value.value) < 1) return result.innerText = "Este valor não é válido."
 
-        for (i = 1; i <= 12; i++) {
-            var calc =  String(i) + " x " + value.value + " = " + i * Number(value.value)
+    for (i = 1; i <= 10; i++) {
+        var calc =  value.value + " x " + String(i) + " = " + Number(value.value) * i
 
-            var resultFinal = document.createElement("p")
+        var resultFinal = document.createElement("p")
 
-            resultFinal.innerText = calc
+        resultFinal.innerText = calc
 
-            result.appendChild(resultFinal)
-        }
+        result.appendChild(resultFinal)
     }
 })
